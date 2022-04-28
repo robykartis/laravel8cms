@@ -22,18 +22,18 @@ Breadcrumbs::for('add_categories', function ($trail) {
     $trail->parent('categories');
     $trail->push('Add', route('categories.create'));
 });
-// Dashboard > Categories > Detail  
+// Dashboard > Categories > Detail
 Breadcrumbs::for('detail_categories', function ($trail, $category) {
     $trail->parent('categories');
     $trail->push('Detail', route('categories.show', ['category' => $category]));
 });
-// Dashboard > Categories > Detail [title]  
+// Dashboard > Categories > Detail [title]
 Breadcrumbs::for('detail_categories_title', function ($trail, $category) {
     $trail->parent('categories');
     $trail->push($category->title, route('categories.show', ['category' => $category]));
 });
 
-// Dashboard > Categories > Edit > 
+// Dashboard > Categories > Edit >
 Breadcrumbs::for('edit_categories_title', function ($trail, $category) {
     $trail->parent('categories', $category);
     $trail->push($category->title, route('categories.edit', ['category' => $category]));
@@ -82,8 +82,18 @@ Breadcrumbs::for('file_manager', function ($trail) {
     $trail->push('File manager', route('filemanager.index'));
 });
 
+// Dashboard > Roles
+Breadcrumbs::for('roles', function ($trail) {
+    $trail->parent('dashboard');
+    $trail->push('Roles', route('roles.index'));
+});
 
-
+// Dashboard > Role > detail
+Breadcrumbs::for('detail_role', function ($trail, $role) {
+    $trail->parent('roles');
+    $trail->push('Detail', route('roles.show', ['role' => $role]));
+    $trail->push($role->name, route('roles.show', ['role' => $role]));
+});
 
 // Home > About
 // Breadcrumbs::for('about', function ($trail) {

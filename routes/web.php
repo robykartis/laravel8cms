@@ -7,6 +7,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FileManagerController;
 use App\Http\Controllers\LocalizationController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\RoleController;
 use App\Http\Controllers\TagController;
 
 
@@ -40,4 +41,7 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['web', 'auth']], functio
         Route::get('/index', [FileManagerController::class, 'index'])->name('filemanager.index');
         \UniSharp\LaravelFilemanager\Lfm::routes();
     });
+
+    // Route Roles
+    Route::resource('/roles', RoleController::class);
 });

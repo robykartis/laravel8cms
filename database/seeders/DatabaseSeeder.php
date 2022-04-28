@@ -15,10 +15,9 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         $this->call([
-
             CategoryTableSeeder::class,
             TagTableSeeder::class,
-            PermissiontableSeeder::class,
+            PermissionTableSeeder::class,
             UserTableSeeder::class
         ]);
     }
