@@ -95,6 +95,12 @@ Breadcrumbs::for('detail_role', function ($trail, $role) {
     $trail->push($role->name, route('roles.show', ['role' => $role]));
 });
 
+// Dashboard > Role > add
+Breadcrumbs::for('add_role', function ($trail) {
+    $trail->parent('roles');
+    $trail->push('Add', route('roles.create'));
+});
+
 // Home > About
 // Breadcrumbs::for('about', function ($trail) {
 //     $trail->parent('home');
