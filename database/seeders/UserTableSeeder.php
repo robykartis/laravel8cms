@@ -22,9 +22,9 @@ class UserTableSeeder extends Seeder
         DB::table('users')->insert([
             [
                 'name' => 'Super Admin',
-                'email' => 'superadmin@mail.test',
+                'email' => 'su@email.com',
                 'email_verified_at' => now(),
-                'password' => Hash::make('superadmin'),
+                'password' => Hash::make('123'),
                 'remember_token' => Str::random(10),
                 'created_at' => date("Y-m-d H:i:s"),
                 'updated_at' => date("Y-m-d H:i:s")
